@@ -68,12 +68,6 @@ jobs:
           rm -f ./.config*
           touch ./.config
           
-      - name: 同步最新的源码
-        run: |
-          git remote add openwrt https://github.com/coolsnowwolf/lede.git
-          git pull openwrt master
-          git remote -v
-
           #
           # ========================固件定制部分========================
           # 
@@ -173,6 +167,7 @@ jobs:
           CONFIG_PACKAGE_luci-app-webadmin=y
           CONFIG_PACKAGE_luci-app-wireguard=y
           CONFIG_PACKAGE_luci-app-wrtbwmon=y
+          CONFIG_PACKAGE_luci-app-aliddns=y
           EOF
 
           # LuCI主题:
